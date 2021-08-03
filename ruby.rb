@@ -109,19 +109,18 @@ end
 # print consonant_cancel("writing code is challenging")
 
 def same_char_collapse(str)
-  count = Hash.new(0)
-  newStr = ''
-  
-  str.each_char { |char| count[char] += 1 }
-  
-  count.each do |k, v|
-    if v % 2 != 0
-      newStr += k
+  i = 1
+  while i <= str.length
+    if str[i] == str[i - 1]
+      str = str[0...i - 1] + str[i + 1..-1]
+      i = 0
+      p str
     end
+    i += 1
   end
-  
-  return newStr
+
+  str
 end
 
-puts same_char_collapse("zzzxaaxy")
+puts same_char_collapse("zzzxaaxyz")
 puts same_char_collapse("uqrssrqvtt")
