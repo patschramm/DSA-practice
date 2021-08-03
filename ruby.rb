@@ -69,6 +69,41 @@ def all_else_equal(arr)
   end
 end
 
-p all_else_equal([2, 4, 3, 10, 1]) #=> 10, because the sum of all elements is 20
-p all_else_equal([6, 3, 5, -9, 1]) #=> 3, because the sum of all elements is 6
-p all_else_equal([1, 2, 3, 4])     #=> nil, because the sum of all elements is 10 and there is no 5 in the array
+# p all_else_equal([2, 4, 3, 10, 1]) #=> 10, because the sum of all elements is 20
+# p all_else_equal([6, 3, 5, -9, 1]) #=> 3, because the sum of all elements is 6
+# p all_else_equal([1, 2, 3, 4])     #=> nil, because the sum of all elements is 10 and there is no 5 in the array
+
+def anagrams?(word1, word2)
+  hash = Hash.new(0)
+  
+  word1.each_char do |char|
+    hash[char] += 1
+  end
+  word2.each_char do |char|
+    hash[char] -= 1
+  end
+
+  return hash.all? {|k, v| v == 0}
+end
+
+# puts anagrams?("cat", "act")          #=> true
+# puts anagrams?("restful", "fluster")  #=> true
+# puts anagrams?("cat", "dog")          #=> false
+# puts anagrams?("boot", "bootcamp")    #=> false
+
+def consonant_cancel(str)
+  words = str.split(' ')
+  vowels = "aeiou"
+  res = []
+
+  words.each do |word|
+    word.each_char do |char|
+      if 
+    end
+  end
+
+  res
+end
+
+print consonant_cancel("down the rabbit hole")
+print consonant_cancel("writing code is challenging")
