@@ -91,19 +91,37 @@ end
 # puts anagrams?("cat", "dog")          #=> false
 # puts anagrams?("boot", "bootcamp")    #=> false
 
-def consonant_cancel(str)
-  words = str.split(' ')
-  vowels = "aeiou"
-  res = []
+# def consonant_cancel(str)
+#   words = str.split(' ')
+#   vowels = "aeiou"
+#   res = []
 
-  words.each do |word|
-    word.each_char do |char|
-      if 
+#   words.each do |word|
+#     word.each_char do |char|
+#       if 
+#     end
+#   end
+
+#   res
+# end
+
+# print consonant_cancel("down the rabbit hole")
+# print consonant_cancel("writing code is challenging")
+
+def same_char_collapse(str)
+  count = Hash.new(0)
+  newStr = ''
+  
+  str.each_char { |char| count[char] += 1 }
+  
+  count.each do |k, v|
+    if v % 2 != 0
+      newStr += k
     end
   end
-
-  res
+  
+  return newStr
 end
 
-print consonant_cancel("down the rabbit hole")
-print consonant_cancel("writing code is challenging")
+puts same_char_collapse("zzzxaaxy")
+puts same_char_collapse("uqrssrqvtt")
