@@ -18,3 +18,16 @@ end
 
 puts vowel_cipher("bootcamp")
 puts vowel_cipher("paper cup")
+
+def double_letter_count(string)
+  count = 0
+  string.each_char.with_index do |char, i|
+    if char == string[i + 1]
+      count += 1
+    end
+  end
+  count
+end
+
+puts double_letter_count("the jeep rolled down the hill")
+puts double_letter_count("bootcamp")
