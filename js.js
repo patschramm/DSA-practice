@@ -19,3 +19,37 @@ var areOccurrencesEqual = function (s) {
 
   return true;
 };
+
+
+var countBalls = function (lowLimit, highLimit) {
+  let boxes = {};
+
+  for (let i = lowLimit; i <= highLimit; i++) {
+    if (boxes[boxDecider(i)]) {
+      boxes[boxDecider(i)]++;
+    } else {
+      boxes[boxDecider(i)] = 1;
+    }
+  }
+
+  let count = 0;
+
+  for (box in boxes) {
+    if (boxes[box] > count) {
+      count = boxes[box];
+    }
+  }
+
+  return count;
+};
+
+function boxDecider(n) {
+  let str = n.toString();
+  let box = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    box += parseInt(str[i]);
+  }
+
+  return box;
+}
