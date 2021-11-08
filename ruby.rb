@@ -123,4 +123,5 @@ def same_char_collapse(str)
 end
 
 puts same_char_collapse("zzzxaaxyz")
+
 #WORK
