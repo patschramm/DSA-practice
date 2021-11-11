@@ -57,3 +57,14 @@ function boxDecider(n) {
 var isPalindrome = function(x) {
     return x === parseInt(x.toString().split('').reverse().join(''));
 };
+
+var isValid = function(s) {
+    let par = true;
+    let brac = true;
+    let curl = true;
+    
+    for (let i = 0; i < s.length; i++) {
+        
+    }
+    
+};
