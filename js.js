@@ -64,7 +64,19 @@ var isValid = function(s) {
     let curl = true;
     
     for (let i = 0; i < s.length; i++) {
-        
+        if (s[i] === "{" && brac && par && curl) {
+            brac = false;
+        } elseif (s[i] === "}" && !brac) {
+            brac = true;
+        } elsif ((s[i] === "}" && brac) || (s[i] === "{" && !brac)) {
+            return false;
+        } elseif (s[i] === "(" && par && brac && curl) {
+            par = false;
+        } elseif (s[i] === ")" && !par) {
+            brac = true;
+        } elsif ((s[i] === ")" && par) || (s[i] === "(" && !par)) {
+            return false;
+        } 
     }
     
 };
