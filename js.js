@@ -58,25 +58,28 @@ var isPalindrome = function(x) {
     return x === parseInt(x.toString().split('').reverse().join(''));
 };
 
-var isValid = function(s) {
-    let par = true;
-    let brac = true;
-    let curl = true;
-    
-    for (let i = 0; i < s.length; i++) {
-        if (s[i] === "{" && brac && par && curl) {
-            brac = false;
-        } elseif (s[i] === "}" && !brac) {
-            brac = true;
-        } elsif ((s[i] === "}" && brac) || (s[i] === "{" && !brac)) {
-            return false;
-        } elseif (s[i] === "(" && par && brac && curl) {
-            par = false;
-        } elseif (s[i] === ")" && !par) {
-            brac = true;
-        } elsif ((s[i] === ")" && par) || (s[i] === "(" && !par)) {
-            return false;
-        } 
-    }
-    
+function sumOrProduct(array, n) {
+  // your code here
+  let sorted = array.sort(function(a, b){return a - b});
+  let prod = 1;
+  
+  for (let i = 0; i < n; i++) {
+    prod *= array[i];
+  }
+  
+  let sum = 0;
+  let num = n;
+  
+  for (let j = array.length - 1; num > 0; num--) {
+    sum += array[j];
+    j--;
+  }
+
+  if (prod > sum) {
+    return "product"
+  } else if (sum > prod) {
+    return "sum"
+  } else {
+    return "same"
+  }
 };
