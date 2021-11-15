@@ -131,3 +131,15 @@ def summation(num)
   
   sum
 end
+
+def rental_car_cost(d)
+  sum = d * 40;
+  
+  if d >= 7
+    return sum - 50
+  elsif d >= 3
+    return sum - 20
+  else 
+    return sum
+  end
+end
