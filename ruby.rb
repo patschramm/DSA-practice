@@ -124,4 +124,10 @@ end
 
 puts same_char_collapse("zzzxaaxyz")
 
-#WORK
+def summation(num)
+  sum = 0
+  
+  (1..num).each { |n| sum += n }
+  
+  sum
+end
