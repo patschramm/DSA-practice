@@ -147,3 +147,21 @@ def coprime?(n, m)
   end
 true
 end
+
+def get_sum(a,b)
+  # Good Luck!
+  return a if a == b
+  
+  sum = 0
+  if a > b
+    (b..a).each do |n|
+      sum += n
+    end
+  else
+    (a..b).each do |n|
+      sum += n
+    end
+  end
+  
+  sum
+end
