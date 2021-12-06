@@ -140,8 +140,8 @@ def rental_car_cost(d)
 end
 
 def coprime?(n, m)
-  (2..m).each |num|
-    if n % num == 0 || m % num == 0
+  (2..m).each do |num|
+    if n % num == 0 && m % num == 0
       return false
     end
   end
