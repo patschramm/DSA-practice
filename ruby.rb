@@ -165,3 +165,34 @@ def get_sum(a,b)
   
   sum
 end
+
+require 'prime'
+def gap(g, m, n)
+  arr = []
+  
+  (m..n).each do |num|
+    if num.prime?
+      arr << num
+    end
+  end
+
+  (m..n).each.with_index do |p, i|
+    if arr[i + 1]
+      if arr[i + 1] - p == g
+        return [p, arr[i + 1]]
+      end
+    end
+  end
+    
+  return nil
+end
+
+# def prime?(n)
+#   return false if n < 2
+  
+#   (2...n).each do |num|
+#     return false if n % num == 0
+#   end
+  
+#   return true
+# end
