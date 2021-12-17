@@ -187,12 +187,12 @@ def gap(g, m, n)
   return nil
 end
 
-# def prime?(n)
-#   return false if n < 2
+def prime?(n)
+  return false if n < 2
   
-#   (2...n).each do |num|
-#     return false if n % num == 0
-#   end
+  (2...n).each do |num|
+    return false if n % num == 0
+  end
   
-#   return true
-# end
+  return true
+end
