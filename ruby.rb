@@ -148,44 +148,44 @@ def coprime?(n, m)
 true
 end
 
-def get_sum(a,b)
-  # Good Luck!
-  return a if a == b
+# def get_sum(a,b)
+#   # Good Luck!
+#   return a if a == b
   
-  sum = 0
-  if a > b
-    (b..a).each do |n|
-      sum += n
-    end
-  else
-    (a..b).each do |n|
-      sum += n
-    end
-  end
+#   sum = 0
+#   if a > b
+#     (b..a).each do |n|
+#       sum += n
+#     end
+#   else
+#     (a..b).each do |n|
+#       sum += n
+#     end
+#   end
   
-  sum
-end
+#   sum
+# end
 
-require 'prime'
-def gap(g, m, n)
-  arr = []
+# require 'prime'
+# def gap(g, m, n)
+#   arr = []
   
-  (m..n).each do |num|
-    if num.prime?
-      arr << num
-    end
-  end
+#   (m..n).each do |num|
+#     if num.prime?
+#       arr << num
+#     end
+#   end
 
-  (m..n).each.with_index do |p, i|
-    if arr[i + 1]
-      if arr[i + 1] - p == g
-        return [p, arr[i + 1]]
-      end
-    end
-  end
+#   (m..n).each.with_index do |p, i|
+#     if arr[i + 1]
+#       if arr[i + 1] - p == g
+#         return [p, arr[i + 1]]
+#       end
+#     end
+#   end
     
-  return nil
-end
+#   return nil
+# end
 
 # def prime?(n)
 #   return false if n < 2
